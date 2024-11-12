@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="row">
-	<div class="col-md-<?php envo_one_main_content_width_columns(); ?>">
+	<div class="envo-content col-md-<?php envo_one_main_content_width_columns(); ?>">
 		<div class="error-template text-center">
 			<h1><?php esc_html_e( 'Nothing here', 'envo-one' ); ?></h1>
 			<p class="error-details">

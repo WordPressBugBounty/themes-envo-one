@@ -29,7 +29,7 @@ if ( !function_exists( 'envo_one_single_generate_content' ) ) :
 	function envo_one_single_generate_content() {
 		?>
 		<div class="row single-post">      
-			<article class="col-md-<?php envo_one_main_content_width_columns(); ?>">
+			<article class="envo-content col-md-<?php envo_one_main_content_width_columns(); ?>">
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>                         
 						<div <?php post_class( 'single-post-content' ); ?>>
 							<?php
@@ -63,7 +63,7 @@ if ( !function_exists( 'envo_one_page_generate_content' ) ) :
 	function envo_one_page_generate_content() {
 		?>
 		<div class="row single-page">
-			<article class="col-md-<?php envo_one_main_content_width_columns(); ?>">
+			<article class="envo-content col-md-<?php envo_one_main_content_width_columns(); ?>">
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>                          
 						<div <?php post_class('single-page-content'); ?>>
 							<?php do_action( 'envo_one_page_content' ); ?>
@@ -90,7 +90,7 @@ if ( !function_exists( 'envo_one_archive_generate_content' ) ) :
 	function envo_one_archive_generate_content() {
 		?>
 		<div class="row">
-			<div class="col-md-<?php envo_one_main_content_width_columns(); ?>">
+			<div class="envo-content col-md-<?php envo_one_main_content_width_columns(); ?>">
 				<?php if ( have_posts() ) : ?>
 					<header class="archive-page-header text-center">
 						<?php

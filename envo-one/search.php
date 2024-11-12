@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="row">
-    <div class="col-md-<?php envo_one_main_content_width_columns(); ?>">
+    <div class="envo-content col-md-<?php envo_one_main_content_width_columns(); ?>">
 		<h1 class='search-head text-center'>
 			<?php
 			/* translators: %s: Search results */

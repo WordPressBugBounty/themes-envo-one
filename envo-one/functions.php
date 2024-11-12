@@ -544,10 +544,10 @@ function envo_one_body_header_code() {
 				</div>
 			</div>
 		</div>
-		<?php if ( !is_page_template( 'templates/template-page-builders.php' ) ) { ?>
+		<?php if ( is_page_template( 'templates/template-page-builders.php' ) || is_singular( 'elementor_library' )  ) {return;} ?>
 			<div id="site-content" class="container main-container" role="main">
 				<div class="page-area">
-		<?php }
+		<?php 
 }
 
 add_action('wp_body_open', 'envo_one_body_header_code', 5);

@@ -138,7 +138,7 @@ add_action( 'woocommerce_after_main_content', 'envo_one_wrapper_end', 10 );
 function envo_one_wrapper_start() {
 	?>
 	<div class="row">
-		<article class="woo-content col-md-<?php envo_one_main_content_width_columns(); ?>">
+		<article class="envo-content woo-content col-md-<?php envo_one_main_content_width_columns(); ?>">
 	<?php
 }
 
