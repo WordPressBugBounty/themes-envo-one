@@ -6,7 +6,14 @@ $the_theme = wp_get_theme();
 define('ENVO_ONE', $the_theme->get( 'Version' ));
 
 add_action('after_setup_theme', 'envo_one_setup');
-
+add_action(
+	'doing_it_wrong_run',
+	static function ( $function_name ) {
+		if ( '_load_textdomain_just_in_time' === $function_name ) {
+			debug_print_backtrace();
+		}
+	}
+);
 if (!function_exists('envo_one_setup')) :
 
     /**

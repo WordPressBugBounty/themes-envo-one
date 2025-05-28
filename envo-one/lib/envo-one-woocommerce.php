@@ -4,10 +4,10 @@ if ( !function_exists( 'envo_one_cart_link' ) ) {
 	function envo_one_cart_link() {
 		?>	
 
-			<div class="cart-counter">
-				<span class="count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() ); ?></span>
-				<div class="amount-cart hidden-xs"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></div> 
-				</div>
+		<div class="cart-counter">
+			<span class="count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() ); ?></span>
+			<div class="amount-cart hidden-xs"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></div> 
+		</div>
 		<?php
 	}
 
@@ -25,8 +25,8 @@ if ( !function_exists( 'envo_one_header_cart' ) ) {
 				<div class="header-cart-block">
 					<div class="header-cart-inner">
 						<div class="cart-contents" role="button" tabindex="0" data-tooltip="<?php esc_attr_e( 'Cart', 'envo-one' ); ?>" title="<?php esc_attr_e( 'Cart', 'envo-one' ); ?>">
-						<i data-feather="shopping-cart" class="la la-shopping-bag"></i>
-						<?php envo_one_cart_link(); ?>
+							<i data-feather="shopping-cart" class="la la-shopping-bag"></i>
+							<?php envo_one_cart_link(); ?>
 						</div>
 					</div>
 				</div>
@@ -114,11 +114,13 @@ if ( !function_exists( 'envo_one_head_compare' ) ) {
 	add_action( 'envo_one_top_header', 'envo_one_head_compare', 60 );
 
 	function envo_one_head_compare() {
-		if ( function_exists( 'yith_woocompare_constructor' ) ) {
+		if (class_exists( 'YITH_WooCompare_Frontend' )) {
 			global $yith_woocompare;
+			wp_enqueue_script( 'yith-woocompare-main' );
+			$url =  method_exists('YITH_WooCompare_Frontend', 'view_table_url') ? $yith_woocompare->obj->view_table_url() :  YITH_WooCompare_Frontend::instance()->get_table_url();
 			?>
 			<div class="header-compare product">
-				<a class="compare added" rel="nofollow" href="<?php echo esc_url( $yith_woocompare->obj->view_table_url() ); ?>" data-tooltip="<?php esc_attr_e( 'Compare', 'envo-one' ); ?>" title="<?php esc_attr_e( 'Compare', 'envo-one' ); ?>">
+				<a class="compare added" rel="nofollow" href="<?php echo esc_url( $url ); ?>" data-tooltip="<?php esc_attr_e( 'Compare', 'envo-one' ); ?>" title="<?php esc_attr_e( 'Compare', 'envo-one' ); ?>">
 					<i data-feather="refresh-cw" class="la la-sync"></i>
 				</a>
 			</div>
@@ -139,10 +141,10 @@ function envo_one_wrapper_start() {
 	?>
 	<div class="row">
 		<article class="envo-content woo-content col-md-<?php envo_one_main_content_width_columns(); ?>">
-	<?php
-}
+			<?php
+		}
 
-function envo_one_wrapper_end() {
+		function envo_one_wrapper_end() {
 			?>
 		</article>       
 		<?php get_sidebar( 'right' ); ?>
