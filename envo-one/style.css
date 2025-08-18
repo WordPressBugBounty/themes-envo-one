@@ -4,7 +4,7 @@ Theme URI: https://envothemes.com/envo-one-woocommerce/
 Author: EnvoThemes
 Author URI: https://envothemes.com/
 Description: Envo One is a fast, clean, lightweight, customizable and modern-looking free responsive WooCommerce WordPress theme for e-commerce stores like clothing, fashion, electronics, ebooks, dress store, sports shop, marketplace, multivendor, equipments or online products. Theme works perfectly with the new block editor (Gutenberg) and popular page builders like Elementor, Beaver Builder, SiteOrigin, Thrive Architect, Divi, Brizy, Visual Composer etc. Theme is compatible with YITH WooCommerce Wishlist, YITH WooCommerce Compare, WooCommerce Variation Swatches and other popular plugins. The theme is SEO friendly, WPML and RTL ready. Theme demo ready to import: https://envothemes.com/envo-one/
-Version: 1.0.3
+Version: 1.0.4
 Tested up to: 6.8
 Requires PHP: 5.6
 License: GNU General Public License v3.0 or later
@@ -999,11 +999,11 @@ th {
     .navbar-default .navbar-brand {
         margin-right: -50px;
     }
-    .nav.navbar-right {
+    #my-menu-right .nav.navbar-right {
         width: 100% !important;
         text-align: center;
     }
-    .nav.navbar-right > li {
+    #my-menu-right .nav.navbar-right>li {
         display: inline-block;
     }
     .page-area {

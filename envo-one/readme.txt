@@ -4,7 +4,7 @@ Tags: one-column, two-columns, full-width-template, right-sidebar, custom-backgr
 Requires at least: 4.4
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
 
@@ -94,6 +94,11 @@ All other resources and theme elements are licensed under the [GNU GPL](http://w
 Envo One is distributed under the terms of the GNU GPL (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+
+= Version 1.0.4 =
+* Updated menu styling
+* Tested with WooCommerce 10.1
+* Tested with Elementor 3.31
 
 = Version 1.0.3 =
 * Updated YITH compare fuctions based on new plugin update
