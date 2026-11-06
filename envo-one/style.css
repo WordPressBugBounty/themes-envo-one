@@ -4,8 +4,8 @@ Theme URI: https://envothemes.com/envo-one-woocommerce/
 Author: EnvoThemes
 Author URI: https://envothemes.com/
 Description: Envo One is a fast, clean, lightweight, customizable and modern-looking free responsive WooCommerce WordPress theme for e-commerce stores like clothing, fashion, electronics, ebooks, dress store, sports shop, marketplace, multivendor, equipments or online products. Theme works perfectly with the new block editor (Gutenberg) and popular page builders like Elementor, Beaver Builder, SiteOrigin, Thrive Architect, Divi, Brizy, Visual Composer etc. Theme is compatible with YITH WooCommerce Wishlist, YITH WooCommerce Compare, WooCommerce Variation Swatches and other popular plugins. The theme is SEO friendly, WPML and RTL ready. Theme demo ready to import: https://envothemes.com/envo-one/
-Version: 1.0.4
-Tested up to: 6.8
+Version: 1.0.5
+Tested up to: 7.1
 Requires PHP: 5.6
 License: GNU General Public License v3.0 or later
 License URI: https://www.gnu.org/licenses/gpl.html
@@ -330,9 +330,6 @@ th {
 }
 #content-footer-section .widget-title h3 {
     color: #fff;
-}
-#content-footer-section .widget.col-md-3 {
-    margin: 1%;
 }
 #my-menu-right {
     padding-right: 25px;
@@ -892,6 +889,15 @@ th {
 .wp-caption.alignright {
     margin: 5px 0 20px 20px;
 }
+@media (min-width: 992px) {
+    .col-md-3 {
+        width: 23%;
+    }
+    #content-footer-section .widget.col-md-3 {
+        margin: 1%;
+        width: 23%;
+    }
+}
 @media (max-width: 767px) {
     
     #sidebar {
@@ -1204,5 +1210,22 @@ th {
     }
     .site-heading-sidebar .widget {
         display: block;
+    }
+}
+
+/* Wide and full width blocks (theme.json layout): wide blocks in a constrained layout keep the wide size, next to a
+   sidebar the blocks stay in the content column instead of breaking out to the window width. */
+@media (min-width: 768px) {
+    body .is-layout-constrained > .alignwide {
+        max-width: var(--wp--style--global--wide-size, 1280px);
+    }
+    body .row > [class*="col-md-"]:not(.col-md-12) .alignfull,
+    body .row > [class*="col-md-"]:not(.col-md-12) .alignwide {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    body .row > [class*="col-md-"]:not(.col-md-12) .alignfull img {
+        width: 100%;
     }
 }
